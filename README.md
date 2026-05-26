@@ -35,6 +35,7 @@ Ollama Runtime
 qwen2.5:1.5b
  ↓
 Local Hardware / NVIDIA GPU
+```
 ## 4. 실행 과정
 ### 4.1 Ollama 모델 실행 확인
 ```text
@@ -43,6 +44,7 @@ WSL 환경에서 Ollama를 실행하고 qwen2.5:1.5b 모델을 구동하였다.
 ollama run qwen2.5:1.5b
 
 실행 결과 qwen2.5:1.5b 모델이 정상적으로 로드되었고, 프롬프트 입력 대기 상태가 표시되었다.
+```
 ### 4.2 OpenWebUI Docker 실행
 ```text
 OpenWebUI는 Docker를 사용하여 실행하였다.
@@ -56,22 +58,25 @@ docker run -d \
   --restart always \
   ghcr.io/open-webui/open-webui:main
 처음에는 Docker 명령어가 WSL에서 인식되지 않았으나, Docker Desktop의 WSL Integration을 활성화한 후 정상적으로 실행할 수 있었다.
+```
 ### 4.3 OpenWebUI 접속 확인
 
 ```text
 브라우저에서 다음 주소로 접속하였다.
 http://127.0.0.1:3000
 처음에는 http://localhost:3000 으로 접속했을 때 페이지가 표시되지 않았지만, 127.0.0.1 주소를 사용하여 접속 문제를 해결하였다.
+```
 ### 4.4 OpenWebUI와 Ollama 연결 확인
 ```text
 OpenWebUI 화면에서 qwen2.5:1.5b 모델이 표시되었고, 이를 통해 OpenWebUI가 Ollama API와 정상적으로 연결되었음을 확인하였다.
-
+```
 ## 5. 실행 결과
+```text
 OpenWebUI에서 qwen2.5:1.5b 모델을 선택할 수 있었고, 브라우저 기반 UI를 통해 로컬 LLM 모델을 사용할 수 있는 환경이 구축되었다.
-
+```
 ## 6. 결론
 ```text
 이번 실습에서는 OpenWebUI와 Ollama를 활용하여 로컬 LLM 실행 환경을 구축하였다. OpenWebUI는 사용자가 브라우저에서 모델과 대화할 수 있는 UI 역할을 수행하고, Ollama는 로컬 모델을 실행하며 API를 통해 OpenWebUI와 연결되는 Serving Layer 역할을 수행한다.
 
 실습 모델로는 qwen2.5:1.5b를 선택하였다. 또한 Docker를 통해 OpenWebUI를 실행하고, WSL 환경에서 Ollama를 사용하여 로컬 모델이 정상적으로 동작하는 것을 확인하였다. 최종적으로 OpenWebUI 화면에서 qwen2.5:1.5b 모델이 표시되어 전체 Local LLM Stack이 정상적으로 구성되었음을 확인하였다.
-```text
+```
